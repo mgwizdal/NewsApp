@@ -8,4 +8,8 @@
     <string name="type">Type: </string>
     <string name="section"> Section: </string>
     <string name="open_in_browser">OPEN IN BROWSER</string>
+    <string name="action_save">Save</string>
+    <string name="show_favourites">Show favourites</string>
+    <string name="details_label">News Details</string>
+    <string name="favourites_label">Favourites</string>
 </resources>

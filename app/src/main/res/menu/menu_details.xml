@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".DetailsActivity">
+    <item
+        android:id="@+id/action_set_as_favourite"
+        android:title="Set Favourite"
+        android:icon="@android:drawable/star_off"
+        app:showAsAction="always"
+        android:checkable="true"/>
+</menu>
