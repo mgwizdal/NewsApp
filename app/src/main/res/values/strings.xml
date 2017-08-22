@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">NewsApp</string>
+    <string name="hint">Search news by keyword!</string>
+    <string name="internet_error">There is no Internet in the device</string>
+    <string name="null_searching">There is no such a book/author</string>
+    <string name="search_button">Search!</string>
+</resources>

@@ -1,0 +1,62 @@
+<!-- Layout for a list of books -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/search_bar_height"
+        android:orientation="horizontal"
+        android:layout_above="@+id/list"
+        android:layout_alignParentTop="true"
+        >
+
+        <EditText
+            android:id="@+id/search_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/search_edit_text_padding_top"
+            android:layout_weight="5"
+            android:hint="@string/hint" />
+
+        <ImageButton
+            android:id="@+id/search_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/search_icon"
+            android:background="@null"
+            android:layout_margin="1dp" />
+    </LinearLayout>
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+
+        <TextView
+            android:id="@+id/empty_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+        <ProgressBar
+            android:id="@+id/loading_indicator"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+
+</LinearLayout>
