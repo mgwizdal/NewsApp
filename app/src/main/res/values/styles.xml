@@ -6,6 +6,49 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
     </style>
+    <style name="TitleStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorAuthor</item>
+        <item name="android:textSize">@dimen/title_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="DateStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorAuthor</item>
+        <item name="android:textSize">@dimen/smaller_text</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+    <style name="ButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorBackground</item>
+        <item name="android:text">@string/open_in_browser</item>
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:padding">@dimen/list_item_padding</item>
+    </style>
+    <style name="AdditionalInfoStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/list_item_padding</item>
+        <item name="android:paddingRight">@dimen/list_item_padding</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="SearchButtonStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:elevation">1dp</item>
+        <item name="android:background">@drawable/round_button</item>
+        <item name="android:maxHeight">@dimen/search_bar_height</item>
+        <item name="android:src">@drawable/search_icon</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:tint">@color/colorBackground</item>
+    </style>
+
 
 </resources>

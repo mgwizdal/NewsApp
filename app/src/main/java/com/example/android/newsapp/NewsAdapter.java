@@ -25,10 +25,10 @@ public class NewsAdapter extends ArrayAdapter<News> {
                     R.layout.list_item, parent, false);
         }
         News currentNewsListener = getItem(position);
-        TextView authorView = (TextView) listItemView.findViewById(R.id.section);
-        authorView.setText(currentNewsListener.getTitle());
         TextView titleView = (TextView) listItemView.findViewById(R.id.title);
-        titleView.setText(currentNewsListener.getSectionName());
+        titleView.setText(currentNewsListener.getTitle());
+        TextView sectionView = (TextView) listItemView.findViewById(R.id.section);
+        sectionView.setText(currentNewsListener.getSectionName());
         TextView dateView = (TextView) listItemView.findViewById(R.id.date);
         dateView.setText(currentNewsListener.getDate());
         return listItemView;

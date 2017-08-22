@@ -2,6 +2,10 @@
     <string name="app_name">NewsApp</string>
     <string name="hint">Search news by keyword!</string>
     <string name="internet_error">There is no Internet in the device</string>
-    <string name="null_searching">There is no such a book/author</string>
+    <string name="null_searching">There is no such a topic/article</string>
     <string name="search_button">Search!</string>
+    <string name="add_to_favourites">ADD TO FAVOURITES</string>
+    <string name="type">Type: </string>
+    <string name="section"> Section: </string>
+    <string name="open_in_browser">OPEN IN BROWSER</string>
 </resources>

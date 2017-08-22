@@ -27,8 +27,10 @@ public final class QueryUtils {
     private static final String JSON_KEY_SECTION = "sectionName";
     private static final String JSON_KEY_DATE = "webPublicationDate";
     private static final String JSON_KEY_URL = "webUrl";
+    private static final String JSON_KEY_TYPE = "type";
     private static final String JSON_OBJECT = "response";
     private static final String JSON_ARRAY = "results";
+
 
 
     private QueryUtils() {
@@ -122,15 +124,9 @@ public final class QueryUtils {
                 String title = currentResult.getString(JSON_KEY_TITLES);
                 String date = currentResult.getString(JSON_KEY_DATE);
                 String url = currentResult.getString(JSON_KEY_URL);
-                // Couldn't handle those date formats, but I think it is connected with format of date in JSON response
-                /*try {
-                    String format = "yyyy-MM-dd";
-                    SimpleDateFormat sdf = new SimpleDateFormat(format);
-                    date = sdf.parse(stringDate);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }*/
-                News news = new News(title, sectionName, date, url);
+                String type = currentResult.getString(JSON_KEY_TYPE);
+
+                News news = new News(title, sectionName, date, url, type, false);
                 newsListeners.add(news);
             }
         } catch (JSONException e) {

@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -62,8 +63,18 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 News currentNews = mAdapter.getItem(position);
-                Uri newsUri = Uri.parse(currentNews.getUrl());
-                Intent websiteIntent = new Intent(Intent.ACTION_VIEW, newsUri);
+                Intent websiteIntent = new Intent(getApplicationContext(), DetailsActivity.class);
+                websiteIntent.putExtra("title", currentNews.getTitle());
+                websiteIntent.putExtra("type", currentNews.getType());
+                websiteIntent.putExtra("date", currentNews.getDate());
+                websiteIntent.putExtra("section", currentNews.getSectionName());
+                websiteIntent.putExtra("url", currentNews.getUrl());
+                websiteIntent.putExtra("favourite", currentNews.getFavourite());
+
+                Log.i(LOG_TAG, "titleString: " + currentNews.getTitle());
+                Log.i(LOG_TAG, "sectionString: " + currentNews.getSectionName());
+
+
                 startActivity(websiteIntent);
             }
         });
