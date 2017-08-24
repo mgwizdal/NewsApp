@@ -12,4 +12,7 @@
     <string name="show_favourites">Show favourites</string>
     <string name="details_label">News Details</string>
     <string name="favourites_label">Favourites</string>
+    <string name="empty_view_title_text">It\'s a bit lonely here...</string>
+    <string name="no_news_deleted">No news was deleted</string>
+    <string name="news_deleted">Deleted from database</string>
 </resources>

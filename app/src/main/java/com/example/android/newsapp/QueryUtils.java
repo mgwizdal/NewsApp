@@ -31,8 +31,6 @@ public final class QueryUtils {
     private static final String JSON_OBJECT = "response";
     private static final String JSON_ARRAY = "results";
 
-
-
     private QueryUtils() {
     }
 

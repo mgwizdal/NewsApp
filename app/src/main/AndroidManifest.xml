@@ -29,6 +29,13 @@
         <activity
             android:name=".FavouritesActivity"
             android:label="@string/favourites_label" />
+        <provider
+
+            android:authorities="com.example.android.newsapp"
+            android:exported="false"
+            android:name=".data.NewsProvider" >
+
+        </provider>
     </application>
 
 </manifest>

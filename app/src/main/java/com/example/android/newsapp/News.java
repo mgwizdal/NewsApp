@@ -1,7 +1,7 @@
 package com.example.android.newsapp;
 
 public class News {
-    private String mSectionName;
+    private String mSection;
     private String mTitle;
     private String mDate;
     private String mUrl;
@@ -9,8 +9,8 @@ public class News {
     private boolean mFavourite;
 
 
-    public News( String title, String sectionName, String date, String url, String type, boolean favourite) {
-        mSectionName = sectionName;
+    public News( String title, String section, String date, String url, String type, boolean favourite) {
+        mSection = section;
         mTitle = title;
         mDate = date;
         mUrl = url;
@@ -18,8 +18,8 @@ public class News {
         mFavourite = favourite;
     }
 
-    public String getSectionName() {
-        return mSectionName;
+    public String getSection() {
+        return mSection;
     }
 
     public String getTitle() {
@@ -42,12 +42,9 @@ public class News {
         return mFavourite;
     }
 
-    public void setFavourite() {
-        if (mFavourite == false) {
-            mFavourite = true;
-        } else{
-            mFavourite = false;
-        }
+    public void setFavourite(boolean isFavourite) {
+        mFavourite=isFavourite;
+        return;
     }
 
 }

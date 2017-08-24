@@ -7,8 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 public class NewsAdapter extends ArrayAdapter<News> {
@@ -28,7 +26,7 @@ public class NewsAdapter extends ArrayAdapter<News> {
         TextView titleView = (TextView) listItemView.findViewById(R.id.title);
         titleView.setText(currentNewsListener.getTitle());
         TextView sectionView = (TextView) listItemView.findViewById(R.id.section);
-        sectionView.setText(currentNewsListener.getSectionName());
+        sectionView.setText(currentNewsListener.getSection());
         TextView dateView = (TextView) listItemView.findViewById(R.id.date);
         dateView.setText(currentNewsListener.getDate());
         return listItemView;

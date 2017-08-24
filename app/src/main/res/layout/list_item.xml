@@ -28,6 +28,4 @@
         android:id="@+id/title"
         style="@style/TitleStyle"
         />
-
-
 </LinearLayout>
