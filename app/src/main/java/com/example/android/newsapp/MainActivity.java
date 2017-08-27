@@ -9,7 +9,6 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,15 +17,14 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class MainActivity extends AppCompatActivity
         implements LoaderManager.LoaderCallbacks<List<News>> {
 
     private static final String DEFAULT_SEARCH = "Poland";
-    private static final String LOG_TAG = MainActivity.class.getName();
     private static final String NEWS_JSON = "http://content.guardianapis.com/search?maxResults=10&order-by=newest&api-key=test&q=";
     private static final int LOADER_ID = 1;
     private NewsAdapter mAdapter;
@@ -51,7 +49,7 @@ public class MainActivity extends AppCompatActivity
         newsListView.setAdapter(mAdapter);
         Parcelable state = newsListView.onSaveInstanceState();
         newsListView.onRestoreInstanceState(state);
-        if(mQueryEditText.getText().toString().equals("")){
+        if (mQueryEditText.getText().toString().equals("")) {
             search();
         }
         searchButton.setOnClickListener(new View.OnClickListener() {
@@ -67,14 +65,11 @@ public class MainActivity extends AppCompatActivity
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 News currentNews = mAdapter.getItem(position);
                 Intent websiteIntent = new Intent(getApplicationContext(), DetailsActivity.class);
-                websiteIntent.putExtra("title", currentNews.getTitle());
-                websiteIntent.putExtra("type", currentNews.getType());
-                websiteIntent.putExtra("date", currentNews.getDate());
-                websiteIntent.putExtra("section", currentNews.getSectionName());
-                websiteIntent.putExtra("url", currentNews.getUrl());
-
-                /*Log.i(LOG_TAG, "titleString: " + currentNews.getTitle());
-                Log.i(LOG_TAG, "sectionString: " + currentNews.getSectionName());*/
+                websiteIntent.putExtra(getString(R.string.title_label), currentNews.getTitle());
+                websiteIntent.putExtra(getString(R.string.type_label), currentNews.getType());
+                websiteIntent.putExtra(getString(R.string.date_label), currentNews.getDate());
+                websiteIntent.putExtra(getString(R.string.section_label), currentNews.getSection());
+                websiteIntent.putExtra(getString(R.string.url_label), currentNews.getUrl());
 
                 startActivity(websiteIntent);
             }
@@ -86,6 +81,7 @@ public class MainActivity extends AppCompatActivity
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -96,13 +92,14 @@ public class MainActivity extends AppCompatActivity
         }
         return super.onOptionsItemSelected(item);
     }
+
     public void search() {
         if (isOnline()) {
             newsListView.setAdapter(mAdapter);
             android.app.LoaderManager loaderManager = getLoaderManager();
             loaderManager.initLoader(LOADER_ID, null, this);
             loaderManager.restartLoader(LOADER_ID, null, this);
-            if(mQuery.equals("")){
+            if (mQuery.equals("")) {
                 mEmptyStateTextView.setText(R.string.null_searching);
                 View loadingIndicator = findViewById(R.id.loading_indicator);
                 loadingIndicator.setVisibility(View.GONE);
@@ -133,6 +130,7 @@ public class MainActivity extends AppCompatActivity
         }
         return new NewsLoader(this, finalUrl);
     }
+
     @Override
     public void onLoadFinished(Loader<List<News>> loader, List<News> news) {
         View loadingIndicator = findViewById(R.id.loading_indicator);

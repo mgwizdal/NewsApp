@@ -2,7 +2,6 @@ package com.example.android.newsapp;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,17 +13,14 @@ import static com.example.android.newsapp.data.NewsContract.*;
 
 public class NewsCursorAdapter extends CursorAdapter {
 
-    private static final String LOG_TAG = "NewsCursorAdapter";
-
     public NewsCursorAdapter(Context context, Cursor c) {
-        super(context, c, 0 /* flags */);
+        super(context, c, 0);
     }
 
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
         return LayoutInflater.from(context).inflate(R.layout.list_item, parent, false);
     }
-
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
@@ -42,7 +38,5 @@ public class NewsCursorAdapter extends CursorAdapter {
         dateTextView.append(dateColumnIndex);
         titleTextView.setText(null);
         titleTextView.append(titleColumnIndex);
-        //Log.i(LOG_TAG, "section: " + sectionColumnIndex + ", date: " + dateColumnIndex + ", title: "+ titleColumnIndex );
-
     }
 }

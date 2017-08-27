@@ -4,13 +4,10 @@ import android.content.ContentResolver;
 import android.net.Uri;
 import android.provider.BaseColumns;
 
-/**
- * Created by Maks on 2017-08-22.
- */
 public final class NewsContract {
     private NewsContract() {
     }
-    //To create URI
+
     public static final String CONTENT_AUTHORITY = "com.example.android.newsapp";
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
     public static final String PATH_NEWS = "news";
@@ -21,7 +18,6 @@ public final class NewsContract {
         public static final String CONTENT_ITEM_TYPE =
                 ContentResolver.CURSOR_ITEM_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_NEWS;
         public static final Uri CONTENT_URI = Uri.withAppendedPath(BASE_CONTENT_URI, PATH_NEWS);
-        //Table columns
         public static final String TABLE_NAME = "news";
         public static final String _ID = BaseColumns._ID;
         public final static String COLUMN_NEWS_TITLE = "title";

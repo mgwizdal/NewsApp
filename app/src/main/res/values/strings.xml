@@ -3,16 +3,18 @@
     <string name="hint">Search news by keyword!</string>
     <string name="internet_error">There is no Internet in the device</string>
     <string name="null_searching">There is no such a topic/article</string>
-    <string name="search_button">Search!</string>
-    <string name="add_to_favourites">ADD TO FAVOURITES</string>
     <string name="type">Type: </string>
     <string name="section"> Section: </string>
     <string name="open_in_browser">OPEN IN BROWSER</string>
-    <string name="action_save">Save</string>
     <string name="show_favourites">Show favourites</string>
     <string name="details_label">News Details</string>
     <string name="favourites_label">Favourites</string>
     <string name="empty_view_title_text">It\'s a bit lonely here...</string>
     <string name="no_news_deleted">No news was deleted</string>
     <string name="news_deleted">Deleted from database</string>
+    <string name="title_label">title</string>
+    <string name="type_label">type</string>
+    <string name="date_label">date</string>
+    <string name="section_label">section</string>
+    <string name="url_label">url</string>
 </resources>

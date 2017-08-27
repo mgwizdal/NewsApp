@@ -13,13 +13,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-
 import com.example.android.newsapp.data.NewsContract.NewsEntry;
-
-
-/**
- * Created by Maks on 2017-08-22.
- */
 
 public class FavouritesActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
     private static final int NEWS_LOADER = 0;
@@ -28,7 +22,6 @@ public class FavouritesActivity extends AppCompatActivity implements LoaderManag
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favourites);
-        //Create ListView and EmptyView
         ListView favouritesListView = (ListView) findViewById(R.id.list_favourites);
         View emptyView = findViewById(R.id.empty_view_favourites);
         favouritesListView.setEmptyView(emptyView);
@@ -56,7 +49,6 @@ public class FavouritesActivity extends AppCompatActivity implements LoaderManag
                 NewsEntry.COLUMN_NEWS_DATE
         };
         return new CursorLoader(this, NewsEntry.CONTENT_URI, projection, null, null, null);
-
     }
 
     @Override

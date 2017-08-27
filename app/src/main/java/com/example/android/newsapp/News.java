@@ -8,8 +8,7 @@ public class News {
     private String mType;
     private boolean mFavourite;
 
-
-    public News( String title, String section, String date, String url, String type, boolean favourite) {
+    public News(String title, String section, String date, String url, String type, boolean favourite) {
         mSection = section;
         mTitle = title;
         mDate = date;
@@ -43,7 +42,7 @@ public class News {
     }
 
     public void setFavourite(boolean isFavourite) {
-        mFavourite=isFavourite;
+        mFavourite = isFavourite;
         return;
     }
 
