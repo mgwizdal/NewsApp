@@ -1,1 +1,1 @@
-"# My project's README" 
+"# My project's README. NewsApp searches for Guardian(https://www.theguardian.com) news. By default it queries news connected with Poland. User can search for other News, can open news in browser, add and delete news to/from favourite list." 
