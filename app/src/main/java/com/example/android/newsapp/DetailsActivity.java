@@ -93,7 +93,7 @@ public class DetailsActivity extends AppCompatActivity implements
         Uri newUri = getContentResolver().insert(NewsEntry.CONTENT_URI, values);
     }
 
-    private void deletePet() {
+    private void deleteNews() {
         if (mCurrentNewsUri != null) {
             int rowsDeleted = getContentResolver().delete(mCurrentNewsUri, null, null);
             if (rowsDeleted == 0) {
@@ -129,7 +129,7 @@ public class DetailsActivity extends AppCompatActivity implements
                     boolean isFavourite = false;
                     currentNews.setFavourite(isFavourite);
                     item.setIcon(android.R.drawable.star_off);
-                    deletePet();
+                    deleteNews();
                     Toast.makeText(getApplicationContext(), "Article not on favourite list anymore.", Toast.LENGTH_SHORT).show();
                 }
                 return true;
