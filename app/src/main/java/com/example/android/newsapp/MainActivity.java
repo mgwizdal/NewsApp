@@ -18,6 +18,8 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.android.newsapp.refactor.model.News;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,11 +67,7 @@ public class MainActivity extends AppCompatActivity
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 News currentNews = mAdapter.getItem(position);
                 Intent websiteIntent = new Intent(getApplicationContext(), DetailsActivity.class);
-                websiteIntent.putExtra(getString(R.string.title_label), currentNews.getTitle());
-                websiteIntent.putExtra(getString(R.string.type_label), currentNews.getType());
-                websiteIntent.putExtra(getString(R.string.date_label), currentNews.getDate());
-                websiteIntent.putExtra(getString(R.string.section_label), currentNews.getSection());
-                websiteIntent.putExtra(getString(R.string.url_label), currentNews.getUrl());
+
 
                 startActivity(websiteIntent);
             }
