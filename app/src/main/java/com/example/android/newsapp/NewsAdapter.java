@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.example.android.newsapp.refactor.model.News;
+
 import java.util.List;
 
 public class NewsAdapter extends ArrayAdapter<News> {
@@ -23,12 +25,6 @@ public class NewsAdapter extends ArrayAdapter<News> {
                     R.layout.list_item, parent, false);
         }
         News currentNewsListener = getItem(position);
-        TextView titleView = (TextView) listItemView.findViewById(R.id.title);
-        titleView.setText(currentNewsListener.getTitle());
-        TextView sectionView = (TextView) listItemView.findViewById(R.id.section);
-        sectionView.setText(currentNewsListener.getSection());
-        TextView dateView = (TextView) listItemView.findViewById(R.id.date);
-        dateView.setText(currentNewsListener.getDate());
         return listItemView;
     }
 
