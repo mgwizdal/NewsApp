@@ -17,6 +17,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.android.newsapp.refactor.model.News;
+
 import static com.example.android.newsapp.data.NewsContract.*;
 
 public class DetailsActivity extends AppCompatActivity implements
@@ -37,7 +39,6 @@ public class DetailsActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
-
         titleTV = (TextView) findViewById(R.id.details_title);
         typeTV = (TextView) findViewById(R.id.details_type);
         sectionTV = (TextView) findViewById(R.id.details_section);
@@ -55,9 +56,9 @@ public class DetailsActivity extends AppCompatActivity implements
             String dateString = getIntent().getStringExtra("date");
             urlString = "";
             urlString = getIntent().getStringExtra("url");
-            currentNews = new News(titleString, sectionString, dateString, urlString, typeString, isFavourite);
+            //currentNews = new News(titleString, sectionString, dateString, urlString, typeString, isFavourite);
             getLoaderManager().initLoader(1, null, this);
-            currentNews.setFavourite(isFavourite);
+            //currentNews.setFavourite(isFavourite);
 
             titleTV.setText(titleString);
             typeTV.setText(typeString);
@@ -77,18 +78,18 @@ public class DetailsActivity extends AppCompatActivity implements
     }
 
     private void insertNews(News news) {
-        String news_title = news.getTitle();
+       /* String news_title = news.getTitle();
         String news_section = news.getSection();
         String news_type = news.getType();
         String news_date = news.getDate();
-        String news_url = news.getUrl();
+        String news_url = news.getUrl();*/
 
         ContentValues values = new ContentValues();
-        values.put(NewsEntry.COLUMN_NEWS_TITLE, news_title);
+        /*values.put(NewsEntry.COLUMN_NEWS_TITLE, news_title);
         values.put(NewsEntry.COLUMN_NEWS_SECTION, news_section);
         values.put(NewsEntry.COLUMN_NEWS_TYPE, news_type);
         values.put(NewsEntry.COLUMN_NEWS_DATE, news_date);
-        values.put(NewsEntry.COLUMN_NEWS_URL, news_url);
+        values.put(NewsEntry.COLUMN_NEWS_URL, news_url);*/
 
         Uri newUri = getContentResolver().insert(NewsEntry.CONTENT_URI, values);
     }
@@ -109,9 +110,9 @@ public class DetailsActivity extends AppCompatActivity implements
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_details, menu);
-        if (currentNews.getFavourite()) {
+        /*if (currentNews.getFavourite()) {
             menu.findItem(R.id.action_set_as_favourite).setIcon(android.R.drawable.star_big_on);
-        }
+        }*/
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -119,7 +120,7 @@ public class DetailsActivity extends AppCompatActivity implements
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_set_as_favourite:
-                if (!currentNews.getFavourite()) {
+                /*if (!currentNews.getFavourite()) {
                     boolean isFavourite = true;
                     currentNews.setFavourite(isFavourite);
                     item.setIcon(android.R.drawable.star_big_on);
@@ -131,7 +132,7 @@ public class DetailsActivity extends AppCompatActivity implements
                     item.setIcon(android.R.drawable.star_off);
                     deleteNews();
                     Toast.makeText(getApplicationContext(), "Article not on favourite list anymore.", Toast.LENGTH_SHORT).show();
-                }
+                }*/
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -193,7 +194,7 @@ public class DetailsActivity extends AppCompatActivity implements
             typeTV.setText(typeString);
             sectionTV.setText(sectionString);
             dateTV.setText(dateString);
-            currentNews = new News(titleString, sectionString, dateString, urlString, typeString, isFavourite);
+           // currentNews = new News(titleString, sectionString, dateString, urlString, typeString, isFavourite);
         }
     }
 

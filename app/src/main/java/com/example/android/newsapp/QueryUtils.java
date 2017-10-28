@@ -3,6 +3,8 @@ package com.example.android.newsapp;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.example.android.newsapp.refactor.model.News;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -122,8 +124,7 @@ public final class QueryUtils {
                 String url = currentResult.getString(JSON_KEY_URL);
                 String type = currentResult.getString(JSON_KEY_TYPE);
 
-                News news = new News(title, sectionName, date, url, type, false);
-                newsListeners.add(news);
+
             }
         } catch (JSONException e) {
             Log.e(LOG_TAG, "Problem with parsing JSON response", e);
