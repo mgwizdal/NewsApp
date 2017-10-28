@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 25
@@ -17,8 +18,22 @@ android {
         enabled true
     }
 
+    flavorDimensions 'normal'
+
+    productFlavors {
+        normal {
+            dimension 'normal'
+        }
+        kotlin {
+            dimension 'normal'
+        }
+    }
+
     sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
+
+        normal.java.srcDirs += 'src/main/java'
+
+        kotlin.java.srcDirs += 'src/main/kotlin'
     }
     buildTypes {
         release {
@@ -43,6 +58,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
     testImplementation 'junit:junit:4.12'
+    kapt 'com.android.databinding:compiler:2.3.1'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
 repositories {

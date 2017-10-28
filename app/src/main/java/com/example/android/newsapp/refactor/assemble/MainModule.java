@@ -25,11 +25,11 @@ public class MainModule {
         return new UseCaseFactory(newsGateway);
     }
 
-    private MainContract.Presenter providePresnter(UseCaseFactory useCaseFactory) {
+    private MainContract.Presenter providePresenter(UseCaseFactory useCaseFactory) {
         return new MainPresenter(useCaseFactory);
     }
 
     private MainContract.Presenter assemblePresenter() {
-        return providePresnter(provideUseCaseFactory(provideNewsGateway()));
+        return providePresenter(provideUseCaseFactory(provideNewsGateway()));
     }
 }

@@ -13,7 +13,6 @@ import com.example.android.newsapp.refactor.mvp.base.BaseView;
 public abstract class BaseActivity<V extends BaseView, P extends BasePresenter<V>, VB extends ViewDataBinding> extends AppCompatActivity {
 
     private P presenter;
-    private V view;
     private VB binding;
 
     @LayoutRes
