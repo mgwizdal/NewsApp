@@ -36,7 +36,7 @@ public class MainActivity extends BaseActivity<MainContract.View, MainContract.P
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         searchButton = getBinding().searchButton;
-        newsRecyclerView = getBinding().list;
+        newsRecyclerView = getBinding().recyclerView;
         queryEditText = getBinding().searchEditText;
         emptyStateTextView = getBinding().emptyView;
     }

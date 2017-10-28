@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.TextView;
 
 import com.example.android.newsapp.refactor.model.News;
 
@@ -22,7 +21,7 @@ public class NewsAdapter extends ArrayAdapter<News> {
         View listItemView = convertView;
         if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.list_item, parent, false);
+                    R.layout.item_news, parent, false);
         }
         News currentNewsListener = getItem(position);
         return listItemView;

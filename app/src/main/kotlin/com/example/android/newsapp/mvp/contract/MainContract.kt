@@ -11,5 +11,8 @@ interface MainContract {
         fun showNews(news: List<Result>)
     }
 
-    abstract class Presenter : BasePresenter<View>()
+    abstract class Presenter : BasePresenter<View>() {
+        abstract fun getListSize(): Int
+        abstract fun provideName(position: Int): String
+    }
 }

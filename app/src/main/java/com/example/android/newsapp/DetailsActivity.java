@@ -39,7 +39,6 @@ public class DetailsActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
-
         titleTV = (TextView) findViewById(R.id.details_title);
         typeTV = (TextView) findViewById(R.id.details_type);
         sectionTV = (TextView) findViewById(R.id.details_section);
