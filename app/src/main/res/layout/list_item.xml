@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="@dimen/list_item_padding">
-
-    <RelativeLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:padding="@dimen/list_item_padding">
 
-        <TextView
-            android:id="@+id/section"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorAuthor"
-            android:textSize="@dimen/smaller_text" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAuthor"
+                android:textSize="@dimen/smaller_text" />
+
+            <TextView
+                android:id="@+id/date"
+                style="@style/DateStyle" />
+        </RelativeLayout>
 
         <TextView
-            android:id="@+id/date"
-            style="@style/DateStyle" />
-    </RelativeLayout>
+            android:id="@+id/title"
+            style="@style/TitleStyle" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/title"
-        style="@style/TitleStyle" />
-</LinearLayout>
+</layout>
